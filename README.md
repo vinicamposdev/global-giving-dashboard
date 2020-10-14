@@ -1,6 +1,6 @@
 <h1 align="center">Global Giving Dashboard</h1>
 <p align="center">
-  <strong>Projeto para disciplina de COM231 - Banco de Dados II, Unifei</strong>
+  <strong>Projeto para disciplina de COM231 - Banco de Dados II, Unifei 2º Semestre 2020, Profª Vanessa Souza</strong>
 </p>
 
 **Tier:** Descrição
@@ -17,9 +17,6 @@ sobre o problema. O tipo de análise depende do tipo de dado da organização. N
 inteligência do negócio, Cruz (2017) cita algumas dessas técnicas, das quais interessa a 
 este projeto : relatórios padrão (standard reporting), dashboards e relatórios ad hoc.
 
-   Although this is true of all apps, its even more the case here since each
-user that abandons the site represents the loss of an opportunity to do good
-(see ['What is Web Site Conversion?](##useful-links-and-resources)) below.
 
 ## Metodologia
 - Etapa 1
