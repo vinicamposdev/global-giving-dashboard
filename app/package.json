@@ -1,0 +1,28 @@
+{
+  "name": "api-integration",
+  "version": "1.0.0",
+  "description": "Get data from api and store in a database",
+  "main": "sever.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmo-campos/global-giving-dashboard.git"
+  },
+  "keywords": [
+    "api",
+    "postgres",
+    "mongodb"
+  ],
+  "author": "Vinicius Campos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vmo-campos/global-giving-dashboard/issues"
+  },
+  "homepage": "https://github.com/vmo-campos/global-giving-dashboard#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "mongoose": "^5.10.9"
+  }
+}
