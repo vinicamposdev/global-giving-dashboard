@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "ec5f001c-09cc-462b-8ae3-479db1334332",
+		"name": "BDII",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GlobalGivingAPI",
+			"item": [
+				{
+					"name": "List All Themes",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.globalgiving.org/api/public/projectservice/all/projects?api_key={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"globalgiving",
+								"org"
+							],
+							"path": [
+								"api",
+								"public",
+								"projectservice",
+								"all",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{token}}"
+								}
+							]
+						},
+						"description": "The following code calls the Get All Projects Ids API operation that retrieves all the available project ids."
+					},
+					"response": []
+				},
+				{
+					"name": "List All Projects ",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://api.globalgiving.org/api/public/projectservice/all/projects/active?api_key={{token}}&nextProjectId=1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"globalgiving",
+								"org"
+							],
+							"path": [
+								"api",
+								"public",
+								"projectservice",
+								"all",
+								"projects",
+								"active"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{token}}"
+								},
+								{
+									"key": "nextProjectId",
+									"value": "1"
+								}
+							]
+						},
+						"description": "The following code calls the Get All Projects Ids API operation that retrieves all the available project ids."
+					},
+					"response": []
+				},
+				{
+					"name": "List All Organizations",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.globalgiving.org/api/public/projectservice/all/projects?api_key={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"globalgiving",
+								"org"
+							],
+							"path": [
+								"api",
+								"public",
+								"projectservice",
+								"all",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{token}}"
+								}
+							]
+						},
+						"description": "The following code calls the Get All Projects Ids API operation that retrieves all the available project ids."
+					},
+					"response": [
+						{
+							"name": "List All Projects Ids Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.globalgiving.org/api/public/orgservice/all/organizations?api_key={{token}}&nextOrgId=1",
+									"protocol": "https",
+									"host": [
+										"api",
+										"globalgiving",
+										"org"
+									],
+									"path": [
+										"api",
+										"public",
+										"orgservice",
+										"all",
+										"organizations"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{token}}"
+										},
+										{
+											"key": "nextOrgId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 27 Oct 2020 07:20:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "9227"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "1ee8d37d-8f58-4596-8603-58d48587cdee"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "frame-ancestors 'self' https://app.optimizely.com"
+								},
+								{
+									"key": "x-amzn-Remapped-Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "VDyIkHPcoAMFm7w="
+								},
+								{
+									"key": "x-amzn-Remapped-Server",
+									"value": "Hidden"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=43200"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-5f97ca36-4898355366a713f70bdcd0e1"
+								},
+								{
+									"key": "x-amzn-Remapped-Date",
+									"value": "Tue, 27 Oct 2020 07:20:33 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"organizations\": {\n        \"hasNext\": true,\n        \"nextOrgId\": 12,\n        \"organization\": [\n            {\n                \"id\": 2,\n                \"name\": \"Digital Divide Data\",\n                \"addressLine1\": \"#119, St 360\",\n                \"addressLine2\": \"\",\n                \"city\": \"Phnom Penh\",\n                \"state\": \"Toul Svey\",\n                \"postal\": \"Prey I\",\n                \"iso3166CountryCode\": \"KH\",\n                \"url\": \"http://www.digitaldividedata.com\",\n                \"logoUrl\": \"https://www.globalgiving.org/pfil/organ/2/orglogo.gif\",\n                \"mission\": \"DDD has a duel mission\\r\\n-To establish a sustainable IT outsourcing business that can reinvest its profit in order to benefit more people and connect disadvantaged (physically disabled, trafficked, orphaned, and displaced) individuals to the global economy\\r\\n-To provide the hope, income, education, training, and confidence building required to allow our employees to realize better futures for their families and themselves\",\n                \"totalProjects\": 1,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"ecdev\",\n                            \"name\": \"Economic Growth\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"Cambodia\",\n                            \"iso3166CountryCode\": \"KH\"\n                        }\n                    ]\n                },\n                \"country\": \"Cambodia\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Global Stewardship Foundation Africa\",\n                \"addressLine1\": \"56/60 Kampala Rd P.O. Box 28771\",\n                \"addressLine2\": \"\",\n                \"city\": \"Kampala\",\n                \"state\": \"\",\n                \"postal\": \"\",\n                \"iso3166CountryCode\": \"UG\",\n                \"url\": \"http://www.Gsfa.us\",\n                \"logoUrl\": \"https://www.globalgiving.org/pfil/organ/3/orglogo.gif\",\n                \"mission\": \"Our goal is to supply computer technology and the Internet to the most underserved on the planet;  To address the need for information and computer knowledge that is being demanded all over Africa, through the re-use of some of the twenty million obsolete computers that the United States disposes each year, and provide training seminars to thousands of school-age children yearning for this knowledge.\",\n                \"totalProjects\": 1,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"ecdev\",\n                            \"name\": \"Economic Growth\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"Uganda\",\n                            \"iso3166CountryCode\": \"UG\"\n                        }\n                    ]\n                },\n                \"country\": \"Uganda\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Alternatives (Canada)\",\n                \"addressLine1\": \"3720 du Parc, #300\",\n                \"addressLine2\": \"\",\n                \"city\": \"Montreal\",\n                \"state\": \"Quebec\",\n                \"postal\": \"H2X 2J1\",\n                \"iso3166CountryCode\": \"CA\",\n                \"url\": \"http://alternatives.ca\",\n                \"mission\": \"Alternatives defines its mission as follows: to work in solidarity with NGOs and grassroots organisations in defending the interests of the majority and building a more humane, democratic and ecologically - sound society a the local, national and international levels. A strong civil society, based on grassroots associations, is a central condition for sustainable development.\",\n                \"totalProjects\": 1,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"ecdev\",\n                            \"name\": \"Economic Growth\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"Congo, Democratic Republic of the\",\n                            \"iso3166CountryCode\": \"CD\"\n                        }\n                    ]\n                },\n                \"country\": \"Canada\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Global Village Engineers\",\n                \"ein\": \"04-3534486\",\n                \"addressLine1\": \"3 Clark Road\",\n                \"addressLine2\": \"\",\n                \"city\": \"Millis\",\n                \"state\": \"Massachusetts\",\n                \"postal\": \"02054-1213\",\n                \"iso3166CountryCode\": \"US\",\n                \"url\": \"http://www.gvengineers.org\",\n                \"logoUrl\": \"https://www.globalgiving.org/pfil/organ/5/orglogo.gif\",\n                \"mission\": \"Global Village Engineers is a corps of volunteer civil and environmental engineers who work with rural communities and non governmental organizations in the developing world. Communities often have the greatest stake in the success of engineered infrastructure and are also fully responsible for maintaining it. GVE empowers through education and training to demystify infrastructure and environmental issues in order for marginalized communities to become effective advocates on their own behalf.\",\n                \"totalProjects\": 3,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"ecdev\",\n                            \"name\": \"Economic Growth\"\n                        },\n                        {\n                            \"id\": \"health\",\n                            \"name\": \"Physical Health\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"El Salvador\",\n                            \"iso3166CountryCode\": \"SV\"\n                        },\n                        {\n                            \"name\": \"Vietnam\",\n                            \"iso3166CountryCode\": \"VN\"\n                        }\n                    ]\n                },\n                \"country\": \"United States\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"The Adelante Foundation of Honduras\",\n                \"addressLine1\": \"2139 NW 79th Ave #0535\",\n                \"addressLine2\": \"\",\n                \"city\": \"Miami\",\n                \"state\": \"Florida\",\n                \"postal\": \"33122-1615\",\n                \"iso3166CountryCode\": \"US\",\n                \"url\": \"http://www.adelantefoundation.org\",\n                \"logoUrl\": \"https://www.globalgiving.org/pfil/organ/6/orglogo.gif\",\n                \"mission\": \"Our mission is to improve the standard of living of the poorest of the poor women in rural Honduras. We do this by providing small loans for women to start and grow micro enterprises. We also aim to become financially self sustainable as soon as it is possible and responsible to do so. Furthermore, we would like to become a leader in the field of rural micro credit, acting as a model program to encourage other organizations throughout Latin America and the world to provide credit to the poor.\",\n                \"totalProjects\": 1,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"ecdev\",\n                            \"name\": \"Economic Growth\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"Honduras\",\n                            \"iso3166CountryCode\": \"HN\"\n                        }\n                    ]\n                },\n                \"country\": \"United States\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Educare-Africa\",\n                \"ein\": \"93-1290101\",\n                \"addressLine1\": \"950 Airport Rd., Se # 102\",\n                \"addressLine2\": \"\",\n                \"city\": \"Albany\",\n                \"state\": \"Oregon\",\n                \"postal\": \"97322\",\n                \"iso3166CountryCode\": \"US\",\n                \"url\": \"http://www.orrpcv.peak.org/educare_africa.html\",\n                \"logoUrl\": \"https://www.globalgiving.org/pfil/organ/7/orglogo.gif\",\n                \"mission\": \"To improve living and learning conditions of students in rural Cameroon. In addition, to promote peace, cross-cultural understanding, love and unity of all people.\",\n                \"totalProjects\": 1,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"edu\",\n                            \"name\": \"Education\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"Cameroon\",\n                            \"iso3166CountryCode\": \"CM\"\n                        }\n                    ]\n                },\n                \"country\": \"United States\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"World Camp\",\n                \"ein\": \"56-2219139\",\n                \"addressLine1\": \"157 S. Lexington Ave\",\n                \"addressLine2\": \"Suite B-1\",\n                \"city\": \"Asheville\",\n                \"state\": \"North Carolina\",\n                \"postal\": \"28801\",\n                \"iso3166CountryCode\": \"US\",\n                \"url\": \"http://www.worldcamp.co\",\n                \"mission\": \"World Camp develops simple solutions for the complex problems of poverty and disease. World Camp take a localized approach, working with specific partner communities for an extended period of time. We work in depth not breadth. Our focus is on increasing knowledge and capacity.\",\n                \"totalProjects\": 1,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"climate\",\n                            \"name\": \"Climate Action\"\n                        },\n                        {\n                            \"id\": \"edu\",\n                            \"name\": \"Education\"\n                        },\n                        {\n                            \"id\": \"env\",\n                            \"name\": \"Ecosystem Restoration\"\n                        },\n                        {\n                            \"id\": \"health\",\n                            \"name\": \"Physical Health\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"Malawi\",\n                            \"iso3166CountryCode\": \"MW\"\n                        }\n                    ]\n                },\n                \"country\": \"United States\"\n            },\n            {\n                \"id\": 9,\n                \"name\": \"Network of Entrepreneurship & Economic Development\",\n                \"addressLine1\": \"39-Neel Vihar, Near 14-Sector Power House Indira Nagar\",\n                \"addressLine2\": \"\",\n                \"city\": \"Lucknow\",\n                \"state\": \"Uttar Pradesh\",\n                \"postal\": \"226016\",\n                \"iso3166CountryCode\": \"IN\",\n                \"url\": \"http://www.indianeedlko.org\",\n                \"logoUrl\": \"https://www.globalgiving.org/pfil/organ/9/orglogo.jpg\",\n                \"mission\": \"NEED's mission is to impact the lives of deprived citizens of society, particularly Women and Children, enabling them to reach their full potential and change their lives, particularly through the development of \\\"functional education.\\\" Therefore, the mission is to serve as a Center for Excellence towards a holistic approach to Women and Children.\",\n                \"totalProjects\": 3,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"ecdev\",\n                            \"name\": \"Economic Growth\"\n                        },\n                        {\n                            \"id\": \"edu\",\n                            \"name\": \"Education\"\n                        },\n                        {\n                            \"id\": \"env\",\n                            \"name\": \"Ecosystem Restoration\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"India\",\n                            \"iso3166CountryCode\": \"IN\"\n                        },\n                        {\n                            \"name\": \"Indonesia\",\n                            \"iso3166CountryCode\": \"ID\"\n                        },\n                        {\n                            \"name\": \"Senegal\",\n                            \"iso3166CountryCode\": \"SN\"\n                        }\n                    ]\n                },\n                \"country\": \"India\"\n            },\n            {\n                \"id\": 10,\n                \"name\": \"Friends of Cambodia in the U.S.  (FOCUS)\",\n                \"addressLine1\": \"1062 Lewiston Road\",\n                \"addressLine2\": \"\",\n                \"city\": \"New Gloucester\",\n                \"state\": \"Maine\",\n                \"postal\": \"4260\",\n                \"iso3166CountryCode\": \"US\",\n                \"url\": \"\",\n                \"mission\": \"The mission of FOCUS is to pursue humanitarian programs that include medical aid, school construction and supplies, distribution of rice and rice seeds, road improvements, agricultural improvements, fish farms, basic housing, hospital restoration, school scholarships, and loans for infrastructure improvements. We want to help disadvantaged youth and their families, if they have any, in a country where the infrastructure is still weak due to Khmer Rouge depredations.\",\n                \"totalProjects\": 2,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"health\",\n                            \"name\": \"Physical Health\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"Cambodia\",\n                            \"iso3166CountryCode\": \"KH\"\n                        }\n                    ]\n                },\n                \"country\": \"United States\"\n            },\n            {\n                \"id\": 11,\n                \"name\": \"Samadhan\",\n                \"addressLine1\": \"SAMADHAN'S HUMAN RESOURCE CENTER Pocket 2, Sector 2,\",\n                \"addressLine2\": \"Dwarka\",\n                \"city\": \"New Delhi\",\n                \"state\": \"Delhi\",\n                \"postal\": \"110075\",\n                \"iso3166CountryCode\": \"IN\",\n                \"url\": \"http://www.samadhanindia.org\",\n                \"logoUrl\": \"https://www.globalgiving.org/pfil/organ/11/orglogo.jpg\",\n                \"mission\": \".MISSION STATEMENT: \\\"To establish an infrastructure of accessible services for persons with intellectual disability living in poverty using as far as possible manpower and resources available within target communities, with active community participation, leading to an inclusive society\\\"\",\n                \"totalProjects\": 18,\n                \"activeProjects\": 1,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"children\",\n                            \"name\": \"Child Protection\"\n                        },\n                        {\n                            \"id\": \"ecdev\",\n                            \"name\": \"Economic Growth\"\n                        },\n                        {\n                            \"id\": \"edu\",\n                            \"name\": \"Education\"\n                        },\n                        {\n                            \"id\": \"gender\",\n                            \"name\": \"Gender Equality\"\n                        },\n                        {\n                            \"id\": \"health\",\n                            \"name\": \"Physical Health\"\n                        },\n                        {\n                            \"id\": \"rights\",\n                            \"name\": \"Justice and Human Rights\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"India\",\n                            \"iso3166CountryCode\": \"IN\"\n                        }\n                    ]\n                },\n                \"country\": \"India\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List All Regions",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.globalgiving.org/api/public/projectservice/all/projects?api_key={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"globalgiving",
+								"org"
+							],
+							"path": [
+								"api",
+								"public",
+								"projectservice",
+								"all",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{token}}"
+								}
+							]
+						},
+						"description": "The following code calls the Get All Projects Ids API operation that retrieves all the available project ids."
+					},
+					"response": [
+						{
+							"name": "List All Projects Ids Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.globalgiving.org/api/public/orgservice/all/organizations?api_key={{token}}&nextOrgId=1",
+									"protocol": "https",
+									"host": [
+										"api",
+										"globalgiving",
+										"org"
+									],
+									"path": [
+										"api",
+										"public",
+										"orgservice",
+										"all",
+										"organizations"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{token}}"
+										},
+										{
+											"key": "nextOrgId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 27 Oct 2020 07:20:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "9227"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "1ee8d37d-8f58-4596-8603-58d48587cdee"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "frame-ancestors 'self' https://app.optimizely.com"
+								},
+								{
+									"key": "x-amzn-Remapped-Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "VDyIkHPcoAMFm7w="
+								},
+								{
+									"key": "x-amzn-Remapped-Server",
+									"value": "Hidden"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=43200"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-5f97ca36-4898355366a713f70bdcd0e1"
+								},
+								{
+									"key": "x-amzn-Remapped-Date",
+									"value": "Tue, 27 Oct 2020 07:20:33 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"organizations\": {\n        \"hasNext\": true,\n        \"nextOrgId\": 12,\n        \"organization\": [\n            {\n                \"id\": 2,\n                \"name\": \"Digital Divide Data\",\n                \"addressLine1\": \"#119, St 360\",\n                \"addressLine2\": \"\",\n                \"city\": \"Phnom Penh\",\n                \"state\": \"Toul Svey\",\n                \"postal\": \"Prey I\",\n                \"iso3166CountryCode\": \"KH\",\n                \"url\": \"http://www.digitaldividedata.com\",\n                \"logoUrl\": \"https://www.globalgiving.org/pfil/organ/2/orglogo.gif\",\n                \"mission\": \"DDD has a duel mission\\r\\n-To establish a sustainable IT outsourcing business that can reinvest its profit in order to benefit more people and connect disadvantaged (physically disabled, trafficked, orphaned, and displaced) individuals to the global economy\\r\\n-To provide the hope, income, education, training, and confidence building required to allow our employees to realize better futures for their families and themselves\",\n                \"totalProjects\": 1,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"ecdev\",\n                            \"name\": \"Economic Growth\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"Cambodia\",\n                            \"iso3166CountryCode\": \"KH\"\n                        }\n                    ]\n                },\n                \"country\": \"Cambodia\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Global Stewardship Foundation Africa\",\n                \"addressLine1\": \"56/60 Kampala Rd P.O. Box 28771\",\n                \"addressLine2\": \"\",\n                \"city\": \"Kampala\",\n                \"state\": \"\",\n                \"postal\": \"\",\n                \"iso3166CountryCode\": \"UG\",\n                \"url\": \"http://www.Gsfa.us\",\n                \"logoUrl\": \"https://www.globalgiving.org/pfil/organ/3/orglogo.gif\",\n                \"mission\": \"Our goal is to supply computer technology and the Internet to the most underserved on the planet;  To address the need for information and computer knowledge that is being demanded all over Africa, through the re-use of some of the twenty million obsolete computers that the United States disposes each year, and provide training seminars to thousands of school-age children yearning for this knowledge.\",\n                \"totalProjects\": 1,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"ecdev\",\n                            \"name\": \"Economic Growth\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"Uganda\",\n                            \"iso3166CountryCode\": \"UG\"\n                        }\n                    ]\n                },\n                \"country\": \"Uganda\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Alternatives (Canada)\",\n                \"addressLine1\": \"3720 du Parc, #300\",\n                \"addressLine2\": \"\",\n                \"city\": \"Montreal\",\n                \"state\": \"Quebec\",\n                \"postal\": \"H2X 2J1\",\n                \"iso3166CountryCode\": \"CA\",\n                \"url\": \"http://alternatives.ca\",\n                \"mission\": \"Alternatives defines its mission as follows: to work in solidarity with NGOs and grassroots organisations in defending the interests of the majority and building a more humane, democratic and ecologically - sound society a the local, national and international levels. A strong civil society, based on grassroots associations, is a central condition for sustainable development.\",\n                \"totalProjects\": 1,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"ecdev\",\n                            \"name\": \"Economic Growth\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"Congo, Democratic Republic of the\",\n                            \"iso3166CountryCode\": \"CD\"\n                        }\n                    ]\n                },\n                \"country\": \"Canada\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Global Village Engineers\",\n                \"ein\": \"04-3534486\",\n                \"addressLine1\": \"3 Clark Road\",\n                \"addressLine2\": \"\",\n                \"city\": \"Millis\",\n                \"state\": \"Massachusetts\",\n                \"postal\": \"02054-1213\",\n                \"iso3166CountryCode\": \"US\",\n                \"url\": \"http://www.gvengineers.org\",\n                \"logoUrl\": \"https://www.globalgiving.org/pfil/organ/5/orglogo.gif\",\n                \"mission\": \"Global Village Engineers is a corps of volunteer civil and environmental engineers who work with rural communities and non governmental organizations in the developing world. Communities often have the greatest stake in the success of engineered infrastructure and are also fully responsible for maintaining it. GVE empowers through education and training to demystify infrastructure and environmental issues in order for marginalized communities to become effective advocates on their own behalf.\",\n                \"totalProjects\": 3,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"ecdev\",\n                            \"name\": \"Economic Growth\"\n                        },\n                        {\n                            \"id\": \"health\",\n                            \"name\": \"Physical Health\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"El Salvador\",\n                            \"iso3166CountryCode\": \"SV\"\n                        },\n                        {\n                            \"name\": \"Vietnam\",\n                            \"iso3166CountryCode\": \"VN\"\n                        }\n                    ]\n                },\n                \"country\": \"United States\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"The Adelante Foundation of Honduras\",\n                \"addressLine1\": \"2139 NW 79th Ave #0535\",\n                \"addressLine2\": \"\",\n                \"city\": \"Miami\",\n                \"state\": \"Florida\",\n                \"postal\": \"33122-1615\",\n                \"iso3166CountryCode\": \"US\",\n                \"url\": \"http://www.adelantefoundation.org\",\n                \"logoUrl\": \"https://www.globalgiving.org/pfil/organ/6/orglogo.gif\",\n                \"mission\": \"Our mission is to improve the standard of living of the poorest of the poor women in rural Honduras. We do this by providing small loans for women to start and grow micro enterprises. We also aim to become financially self sustainable as soon as it is possible and responsible to do so. Furthermore, we would like to become a leader in the field of rural micro credit, acting as a model program to encourage other organizations throughout Latin America and the world to provide credit to the poor.\",\n                \"totalProjects\": 1,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"ecdev\",\n                            \"name\": \"Economic Growth\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"Honduras\",\n                            \"iso3166CountryCode\": \"HN\"\n                        }\n                    ]\n                },\n                \"country\": \"United States\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Educare-Africa\",\n                \"ein\": \"93-1290101\",\n                \"addressLine1\": \"950 Airport Rd., Se # 102\",\n                \"addressLine2\": \"\",\n                \"city\": \"Albany\",\n                \"state\": \"Oregon\",\n                \"postal\": \"97322\",\n                \"iso3166CountryCode\": \"US\",\n                \"url\": \"http://www.orrpcv.peak.org/educare_africa.html\",\n                \"logoUrl\": \"https://www.globalgiving.org/pfil/organ/7/orglogo.gif\",\n                \"mission\": \"To improve living and learning conditions of students in rural Cameroon. In addition, to promote peace, cross-cultural understanding, love and unity of all people.\",\n                \"totalProjects\": 1,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"edu\",\n                            \"name\": \"Education\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"Cameroon\",\n                            \"iso3166CountryCode\": \"CM\"\n                        }\n                    ]\n                },\n                \"country\": \"United States\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"World Camp\",\n                \"ein\": \"56-2219139\",\n                \"addressLine1\": \"157 S. Lexington Ave\",\n                \"addressLine2\": \"Suite B-1\",\n                \"city\": \"Asheville\",\n                \"state\": \"North Carolina\",\n                \"postal\": \"28801\",\n                \"iso3166CountryCode\": \"US\",\n                \"url\": \"http://www.worldcamp.co\",\n                \"mission\": \"World Camp develops simple solutions for the complex problems of poverty and disease. World Camp take a localized approach, working with specific partner communities for an extended period of time. We work in depth not breadth. Our focus is on increasing knowledge and capacity.\",\n                \"totalProjects\": 1,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"climate\",\n                            \"name\": \"Climate Action\"\n                        },\n                        {\n                            \"id\": \"edu\",\n                            \"name\": \"Education\"\n                        },\n                        {\n                            \"id\": \"env\",\n                            \"name\": \"Ecosystem Restoration\"\n                        },\n                        {\n                            \"id\": \"health\",\n                            \"name\": \"Physical Health\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"Malawi\",\n                            \"iso3166CountryCode\": \"MW\"\n                        }\n                    ]\n                },\n                \"country\": \"United States\"\n            },\n            {\n                \"id\": 9,\n                \"name\": \"Network of Entrepreneurship & Economic Development\",\n                \"addressLine1\": \"39-Neel Vihar, Near 14-Sector Power House Indira Nagar\",\n                \"addressLine2\": \"\",\n                \"city\": \"Lucknow\",\n                \"state\": \"Uttar Pradesh\",\n                \"postal\": \"226016\",\n                \"iso3166CountryCode\": \"IN\",\n                \"url\": \"http://www.indianeedlko.org\",\n                \"logoUrl\": \"https://www.globalgiving.org/pfil/organ/9/orglogo.jpg\",\n                \"mission\": \"NEED's mission is to impact the lives of deprived citizens of society, particularly Women and Children, enabling them to reach their full potential and change their lives, particularly through the development of \\\"functional education.\\\" Therefore, the mission is to serve as a Center for Excellence towards a holistic approach to Women and Children.\",\n                \"totalProjects\": 3,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"ecdev\",\n                            \"name\": \"Economic Growth\"\n                        },\n                        {\n                            \"id\": \"edu\",\n                            \"name\": \"Education\"\n                        },\n                        {\n                            \"id\": \"env\",\n                            \"name\": \"Ecosystem Restoration\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"India\",\n                            \"iso3166CountryCode\": \"IN\"\n                        },\n                        {\n                            \"name\": \"Indonesia\",\n                            \"iso3166CountryCode\": \"ID\"\n                        },\n                        {\n                            \"name\": \"Senegal\",\n                            \"iso3166CountryCode\": \"SN\"\n                        }\n                    ]\n                },\n                \"country\": \"India\"\n            },\n            {\n                \"id\": 10,\n                \"name\": \"Friends of Cambodia in the U.S.  (FOCUS)\",\n                \"addressLine1\": \"1062 Lewiston Road\",\n                \"addressLine2\": \"\",\n                \"city\": \"New Gloucester\",\n                \"state\": \"Maine\",\n                \"postal\": \"4260\",\n                \"iso3166CountryCode\": \"US\",\n                \"url\": \"\",\n                \"mission\": \"The mission of FOCUS is to pursue humanitarian programs that include medical aid, school construction and supplies, distribution of rice and rice seeds, road improvements, agricultural improvements, fish farms, basic housing, hospital restoration, school scholarships, and loans for infrastructure improvements. We want to help disadvantaged youth and their families, if they have any, in a country where the infrastructure is still weak due to Khmer Rouge depredations.\",\n                \"totalProjects\": 2,\n                \"activeProjects\": 0,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"health\",\n                            \"name\": \"Physical Health\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"Cambodia\",\n                            \"iso3166CountryCode\": \"KH\"\n                        }\n                    ]\n                },\n                \"country\": \"United States\"\n            },\n            {\n                \"id\": 11,\n                \"name\": \"Samadhan\",\n                \"addressLine1\": \"SAMADHAN'S HUMAN RESOURCE CENTER Pocket 2, Sector 2,\",\n                \"addressLine2\": \"Dwarka\",\n                \"city\": \"New Delhi\",\n                \"state\": \"Delhi\",\n                \"postal\": \"110075\",\n                \"iso3166CountryCode\": \"IN\",\n                \"url\": \"http://www.samadhanindia.org\",\n                \"logoUrl\": \"https://www.globalgiving.org/pfil/organ/11/orglogo.jpg\",\n                \"mission\": \".MISSION STATEMENT: \\\"To establish an infrastructure of accessible services for persons with intellectual disability living in poverty using as far as possible manpower and resources available within target communities, with active community participation, leading to an inclusive society\\\"\",\n                \"totalProjects\": 18,\n                \"activeProjects\": 1,\n                \"themes\": {\n                    \"theme\": [\n                        {\n                            \"id\": \"children\",\n                            \"name\": \"Child Protection\"\n                        },\n                        {\n                            \"id\": \"ecdev\",\n                            \"name\": \"Economic Growth\"\n                        },\n                        {\n                            \"id\": \"edu\",\n                            \"name\": \"Education\"\n                        },\n                        {\n                            \"id\": \"gender\",\n                            \"name\": \"Gender Equality\"\n                        },\n                        {\n                            \"id\": \"health\",\n                            \"name\": \"Physical Health\"\n                        },\n                        {\n                            \"id\": \"rights\",\n                            \"name\": \"Justice and Human Rights\"\n                        }\n                    ]\n                },\n                \"countries\": {\n                    \"country\": [\n                        {\n                            \"name\": \"India\",\n                            \"iso3166CountryCode\": \"IN\"\n                        }\n                    ]\n                },\n                \"country\": \"India\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Countries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "API's from https://www.globalgiving.org/api",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

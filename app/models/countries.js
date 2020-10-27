@@ -1,5 +1,10 @@
 const axios = require("axios");
 const { Pool } = require("pg");
+const MongoClient = require("mongodb").MongoClient;
+const { mongoUri } = require("../config");
+
+const uri = mongoUri;
+const mongoClient = new MongoClient(uri, { useNewUrlParser: true });
 
 const charge = async () => {
   try {
@@ -19,9 +24,11 @@ const charge = async () => {
     });
 
     let values = "";
+    const mongoCollectionDocument = [];
     countries.forEach(({ alpha2Code, name }) => {
       const treatedName = name.includes("'") ? name.replace("'", "*") : name; // Error on node when trying to insert country 'Côte d'Ivoire'
       values += `('${treatedName}', '${alpha2Code}' ),`;
+      mongoCollectionDocument.push({ name: treatedName, code: alpha2Code });
     });
     values = values.substring(0, values.length - 1) + ";";
 
@@ -29,6 +36,17 @@ const charge = async () => {
       INSERT INTO countries (name, code)
       VALUES ${values}
     `;
+
+    mongoClient.connect(async (err) => {
+      const collection = mongoClient
+        .db("global-giving")
+        .collection("countries");
+      const insertDocument = await collection.insertMany(
+        mongoCollectionDocument
+      ); //.countDocuments()
+      console.log(insertDocument, err);
+      mongoClient.close();
+    });
 
     console.log({ query });
 
