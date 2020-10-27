@@ -1,23 +1,11 @@
-const axios = require("axios");
-const mongoose = require("mongoose");
-const { token } = require("./config");
+const MongoClient = require("mongodb").MongoClient;
 
-const getApiData = async () => {
-  try {
-    const response = axios({
-      url: `https://api.globalgiving.org/api/public/projectservice/all/projects?api_key=${token}`,
-      header: { Accept: "application/json" },
-      method: "get",
-    });
-
-    console.log(response);
-
-    return { statusCode: 200, body: response };
-  } catch (e) {
-    console.log(e);
-
-    return { statusCode: 500, body: { message: e.message } };
-  }
-};
-
-getApiData();
+const uri =
+  "mongodb+srv://admin:admin@prometheus.z7xl3.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const mongoClient = new MongoClient(uri, { useNewUrlParser: true });
+mongoClient.connect(async (err) => {
+  const collection = mongoClient.db("global-giving").collection("projects");
+  const countTest = await collection.countDocuments(); //.insertMany([{ b: "b" }, { c: "c" }]);
+  console.log(countTest, err);
+  mongoClient.close();
+});

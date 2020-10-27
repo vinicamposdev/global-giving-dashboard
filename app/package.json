@@ -4,6 +4,7 @@
   "description": "Get data from api and store in a database",
   "main": "sever.js",
   "scripts": {
+    "start": "node server.js",
     "test": "jest"
   },
   "repository": {
@@ -23,6 +24,7 @@
   "homepage": "https://github.com/vmo-campos/global-giving-dashboard#readme",
   "dependencies": {
     "axios": "^0.20.0",
-    "mongoose": "^5.10.9"
+    "mongoose": "^5.10.9",
+    "pg": "^8.4.1"
   }
 }
