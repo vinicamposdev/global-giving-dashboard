@@ -1,5 +1,4 @@
 create table themes (
-	id SERIAL PRIMARY KEY,
-	original_id VARCHAR(20) unique,
-	name VARCHAR(40)
+	id VARCHAR(20) PRIMARY KEY,
+	name VARCHAR(40) NOT NULL
 );

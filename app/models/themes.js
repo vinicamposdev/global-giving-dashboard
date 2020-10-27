@@ -8,14 +8,13 @@ const charge = axios({
   method: "get",
 }).then((response) => {
   const themes = response.data.themes.theme;
-  console.log(themes);
 
   const pool = new Pool({
     user: "postgres",
     host: "localhost",
     database: "postgres",
     password: "docker",
-    port: 5432,
+    port: 5433,
   });
 
   let values = "";
@@ -23,21 +22,14 @@ const charge = axios({
     values += `('${id}', '${name}'),`;
   });
   values = values.substring(0, values.length - 1) + ";";
-  console.log({
-    values,
-    value_last: (values[values.length - 1] = ";"),
-    value_sub: values.slice(0, values[values.length - 2]),
-  });
 
   const query = `
-      INSERT INTO themes (original_id, name)
+      INSERT INTO themes (id, name)
       VALUES ${values}
     `;
 
-  console.log({ query });
-
-  pool.query(query, (err, res) => {
-    console.log(err, res);
+  pool.query(query, (_err, _res) => {
+    console.log(_err, _res);
     pool.end();
   });
 });
