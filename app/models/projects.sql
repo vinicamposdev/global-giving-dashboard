@@ -1,5 +1,5 @@
 create table projects (
-	id INT,
+	id INT PRIMARY KEY,
 	title VARCHAR(200) NOT NULL,
     summary TEXT,
     region VARCHAR(200),
@@ -7,14 +7,13 @@ create table projects (
     contactAddress VARCHAR(200),
     funding NUMERIC(14,2) DEFAULT 0.00, 
     goal NUMERIC(14,2) DEFAULT 0.00,
-    status boolean NOT NULL,
-    organization_id INT,
+    status VARCHAR(10) NOT NULL,
+    organization_id INT DEFAULT NULL,
 	country VARCHAR(2),
     CONSTRAINT fk_country
         FOREIGN KEY (country)
-            REFERENCES countries(name),
+            REFERENCES countries(code),
     CONSTRAINT fk_organization
         FOREIGN KEY (organization_id)
-            REFERENCES organizations(id),
-    PRIMARY KEY(organization_id, country)
+            REFERENCES organizations(id)
 );

@@ -4,8 +4,11 @@
   "description": "Get data from api and store in a database",
   "main": "sever.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "jest"
+    "start": "node models/countries.js && node models/themes.js && node models/organizations.js && && node models/projects.js",
+    "countries": "node models/countries.js",
+    "themes": "node models/themes.js",
+    "organizations": "node models/organizations.js",
+    "projects": "node models/projects.js"
   },
   "repository": {
     "type": "git",

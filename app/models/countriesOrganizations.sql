@@ -1,5 +1,5 @@
 create table countries_organizations (
-    organization_id VARCHAR,
+    organization_id INT,
 	country_code VARCHAR(2),
     PRIMARY KEY(organization_id, country_code),
     CONSTRAINT fk_country

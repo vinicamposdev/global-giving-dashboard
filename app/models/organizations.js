@@ -2,7 +2,7 @@ const axios = require("axios");
 const { Pool } = require("pg");
 const { token } = require("../config");
 
-let nextOrgId = 5184;
+let nextOrgId = 1;
 
 const charge = async () => {
   try {
@@ -40,6 +40,7 @@ const charge = async () => {
         totalProjects,
         themes,
         countries,
+        iso3166CountryCode,
       }) => {
         const organization_id = id;
         if (themes && themes.theme)
@@ -51,15 +52,21 @@ const charge = async () => {
             valuesCountries += `('${id}', '${iso3166CountryCode}'),`;
           });
 
-        const logoUrlNormalized = logoUrl ? logoUrl : "";
+        const logoUrlNormalized = logoUrl
+          ? `${logoUrl}`.replace(/\'/g, "")
+          : "";
 
         const address = `${addressLine1} ${addressLine2}`.replace(/\'/g, " ");
         const nameNormalized = `${name}`.replace(/\'/g, " ");
         const cityNormalized = `${city}`.replace(/\'/g, " ");
         const stateNormalized = `${state}`.replace(/\'/g, " ");
         const postalNormalized = `${postal}`.replace(/\'/g, " ");
+        const urlNormalized = `${url}`.replace(/\'/g, "");
+        const countryNormalized = iso3166CountryCode
+          ? "'" + iso3166CountryCode + "'"
+          : "default";
 
-        valuesOrganizations += `('${id}', '${nameNormalized}', '${cityNormalized}', '${stateNormalized}', '${postalNormalized}', '${address}', '${url}', '${logoUrlNormalized}', '${totalProjects}'),`;
+        valuesOrganizations += `('${id}', '${nameNormalized}', '${cityNormalized}', '${stateNormalized}', '${postalNormalized}', '${address}', '${urlNormalized}', '${logoUrlNormalized}', '${totalProjects}', ${countryNormalized}),`;
       }
     );
     const lastIndexValuesOrgs = valuesOrganizations.length - 1;
@@ -79,7 +86,8 @@ const charge = async () => {
         address,
         url,
         logoUrl,
-        totalProjects)
+				totalProjects,
+				country)
 			VALUES ${valuesOrganizations}
 			ON CONFLICT DO NOTHING;
 			

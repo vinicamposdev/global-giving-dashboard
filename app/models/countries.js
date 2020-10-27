@@ -1,8 +1,6 @@
 const axios = require("axios");
 const { Pool } = require("pg");
 
-let nextOrgId = 1;
-
 const charge = async () => {
   try {
     const response = await axios({
@@ -11,7 +9,6 @@ const charge = async () => {
     });
 
     const countries = response.data;
-    console.log(countries);
 
     const pool = new Pool({
       user: "postgres",
@@ -27,11 +24,6 @@ const charge = async () => {
       values += `('${treatedName}', '${alpha2Code}' ),`;
     });
     values = values.substring(0, values.length - 1) + ";";
-    console.log({
-      values,
-      value_last: (values[values.length - 1] = ";"),
-      value_sub: values.slice(0, values[values.length - 2]),
-    });
 
     const query = `
       INSERT INTO countries (name, code)

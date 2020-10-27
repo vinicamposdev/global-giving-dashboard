@@ -11,4 +11,8 @@ Uma explicação de como está
 
 Para rodar o script para passar os dados dos Temas para o banco Postgres, rode:
 
-> node app/models/themes.js
+> npm start
+
+Ou se quiser rodar uma carga de tabela em específico, dentre projects, organizations, themes e countries:
+
+> npm run <table_name>
