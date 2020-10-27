@@ -26,6 +26,8 @@ const charge = async () => {
     let valuesOrganizations = "",
       valuesThemes = "",
       valuesCountries = "";
+
+    const mongoCollectionDocument = [];
     organizations.forEach(
       ({
         id,
@@ -66,6 +68,22 @@ const charge = async () => {
           ? "'" + iso3166CountryCode + "'"
           : "default";
 
+        mongoCollectionDocument.push({
+          id,
+          name: nameNormalized,
+          city: cityNormalized,
+          state: stateNormalized,
+          postal: postalNormalized,
+          address: address,
+          url: urlNormalized,
+          logoUrl: logoUrlNormalized,
+          totalProjects: totalProjects,
+          country: countryNormalized,
+          countries:
+            countries && countries.country ? countries.country : undefined,
+          themes: themes && themes.theme ? themes.theme : undefined,
+        });
+
         valuesOrganizations += `('${id}', '${nameNormalized}', '${cityNormalized}', '${stateNormalized}', '${postalNormalized}', '${address}', '${urlNormalized}', '${logoUrlNormalized}', '${totalProjects}', ${countryNormalized}),`;
       }
     );
@@ -105,6 +123,17 @@ const charge = async () => {
     pool.query(query, (err, res) => {
       console.log(err, res);
       pool.end();
+    });
+
+    mongoClient.connect(async (err) => {
+      const collection = mongoClient
+        .db("global-giving")
+        .collection("organizations");
+      const insertDocument = await collection.insertMany(
+        mongoCollectionDocument
+      ); //.countDocuments()
+      console.log(insertDocument, err);
+      mongoClient.close();
     });
 
     if (nextOrgId) {

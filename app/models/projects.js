@@ -45,11 +45,9 @@ const charge = async () => {
         donationOptions,
       }) => {
         const project_id = id;
-        const organization_id = organization
-          ? organization.id
-            ? organization.id
-            : null
-          : null;
+        const organization_id =
+          organization && organization.id ? organization.id : null;
+
         const country = iso3166CountryCode ? iso3166CountryCode : null;
 
         if (themes && themes.theme)
@@ -73,6 +71,27 @@ const charge = async () => {
         const fundingNormalized = `${funding}`.replace(/\'/g, " ");
         const goalNormalized = `${goal}`.replace(/\'/g, " ");
         const statusNormalized = `${status}`.replace(/\'/g, " ");
+
+        mongoCollectionDocument.push({
+          id,
+          title: titleNormalized,
+          summary: summaryNormalized,
+          region: regionNormalized,
+          activities: activitiesNormalized,
+          contactAddress: ctcAddressNormalized,
+          funding: fundingNormalized,
+          goal: goalNormalized,
+          status: statusNormalized,
+          country,
+          organization_id,
+          themes: themes && themes.theme ? themes.theme : undefined,
+          countries:
+            countries && countries.country ? countries.country : undefined,
+          donationOptions:
+            donationOptions && donationOptions.donationOption
+              ? donationOptions.donationOption
+              : undefined,
+        });
 
         valuesprojects += `('${id}', '${titleNormalized}', '${summaryNormalized}', '${regionNormalized}', '${activitiesNormalized}', '${ctcAddressNormalized}', '${fundingNormalized}', '${goalNormalized}', '${statusNormalized}', ${
           country ? "'" + country + "'" : "default"
