@@ -2,7 +2,7 @@ const axios = require("axios");
 const { Pool } = require("pg");
 const { token } = require("../config");
 
-let nextOrgId = 1;
+let nextOrgId = 5184;
 
 const charge = async () => {
   try {
@@ -42,13 +42,14 @@ const charge = async () => {
         countries,
       }) => {
         const organization_id = id;
-        themes.theme.forEach(({ id }) => {
-          valuesThemes += `('${organization_id}', '${id}'),`;
-        });
-
-        countries.country.forEach(({ iso3166CountryCode }) => {
-          valuesCountries += `('${id}', '${iso3166CountryCode}'),`;
-        });
+        if (themes && themes.theme)
+          themes.theme.forEach(({ id }) => {
+            valuesThemes += `('${organization_id}', '${id}'),`;
+          });
+        if (countries && countries.country)
+          countries.country.forEach(({ iso3166CountryCode }) => {
+            valuesCountries += `('${id}', '${iso3166CountryCode}'),`;
+          });
 
         const logoUrlNormalized = logoUrl ? logoUrl : "";
 
