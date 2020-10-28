@@ -1,6 +1,8 @@
 const axios = require("axios");
 const { Pool } = require("pg");
 const { token } = require("../config");
+const MongoClient = require("mongodb").MongoClient;
+const { mongoUri } = require("../config");
 
 let nextProjectId = 1;
 
@@ -27,6 +29,7 @@ const charge = async () => {
       valuesThemes = "",
       valuesCountries = "",
       valuesDonationOptions = "";
+    const mongoCollectionDocument = [];
     projects.forEach(
       ({
         id,
@@ -98,6 +101,16 @@ const charge = async () => {
         }, ${organization_id ? "'" + organization_id + "'" : "default"}),`;
       }
     );
+
+    mongoClient.connect(async (err) => {
+      const collection = mongoClient.db("global-giving").collection("projects");
+      const insertDocument = await collection.insertMany(
+        mongoCollectionDocument
+      ); //.countDocuments()
+      console.log(insertDocument, err);
+      mongoClient.close();
+    });
+
     const lastIndexValuesOrgs = valuesprojects.length - 1;
     const lastIndexValuesThemes = valuesThemes.length - 1;
     const lastIndexValuesCountries = valuesCountries.length - 1;
