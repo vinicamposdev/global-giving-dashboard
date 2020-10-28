@@ -4,6 +4,9 @@ const { token } = require("../config");
 const MongoClient = require("mongodb").MongoClient;
 const { mongoUri } = require("../config");
 
+const uri = mongoUri;
+const mongoClient = new MongoClient(uri, { useNewUrlParser: true });
+
 let nextOrgId = 1;
 
 const charge = async () => {
